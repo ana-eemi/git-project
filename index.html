@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un Livre</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Bibliothèque</h1>
+    <h2>Ajouter un Livre</h2>
+    <form id="bookForm">
+        <label for="title">Titre :</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="author">Auteur :</label>
+        <input type="text" id="author" name="author" required>
+
+        <label for="date">Date de publication :</label>
+        <input type="date" id="date" name="date" required>
+
+        <button type="submit">Ajouter le Livre</button>
+    </form>
+
+    <div class="book-list" id="bookList">
+        <h2>Liste des Livres</h2>
+    </div>
+
+    <script>
+        const bookForm = document.getElementById('bookForm');
+        const bookList = document.getElementById('bookList');
+
+        bookForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Récupérer les données du formulaire
+            const title = document.getElementById('title').value;
+            const author = document.getElementById('author').value;
+            const date = document.getElementById('date').value;
+
+            // Créer un élément de livre
+            const bookItem = document.createElement('div');
+            bookItem.className = 'book-item';
+            bookItem.innerHTML = `
+                <strong>Titre :</strong> ${title}<br>
+                <strong>Auteur :</strong> ${author}<br>
+                <strong>Date de publication :</strong> ${date}
+            `;
+
+            // Ajouter le livre à la liste
+            bookList.appendChild(bookItem);
+
+            // Réinitialiser le formulaire
+            bookForm.reset();
+        });
+    </script>
+</body>
+</html>
