@@ -6,7 +6,7 @@
 
 1. Clonez ce dépôt :
     ```bash
-    git clone https://github.com/username/project.git
+    git clone https://github.com/username/project.git](https://github.com/ana-eemi/git-project.git
     ```
 
 ### Contribution
